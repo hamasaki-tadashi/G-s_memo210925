@@ -1,0 +1,319 @@
+html{
+	font-size: 62.5%;
+}
+/*全体　共通
+最初から設定してあるので特に変更
+しなくても大丈夫です♪
+-----------------*/
+body{
+	font-family: Roboto, "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+	line-height: 1.75;
+	font-size: 16px;
+	color: #333333;
+}
+
+.flexbox_auto{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* 枠に合わせて、画像をリサイズする；ただ、大きくはならない */
+img {
+max-width: 100%;
+width:auto;
+height: auto;
+object-fit: fill;
+}
+
+/*　パディングをサイズ内側にする処理　*/
+* {
+	padding:0;
+	margin:0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/*ーーーーーーーーーーー*/
+/*この下から記述*/
+/*ーーーーーーーーーーー*/
+
+/*ーーーーーーーーーーー*/
+/*ゲームクリア*/
+/*ーーーーーーーーーーー*/
+#fadein_test02{
+    position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 90000;
+  width: 100%;
+  height: 100%;
+  background:black;
+  opacity: 0.7;
+}
+
+
+#game_clear{
+	z-index: 99999;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform:translate3d(-50%,-50%,0) ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	width: 80%;
+	height: auto;
+}
+
+
+/*ーーーーーーーーーーー*/
+/*トップ画面の仕様*/
+/*ーーーーーーーーーーー*/
+
+#fadein_test{
+    position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9000;
+  width: 100%;
+  height: 100%;
+  background:black;
+  opacity: 0.7;
+}
+
+#FDI_p{
+    background-color: gold;
+    z-index: 99999;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform:translate3d(-50%,-50%,0) ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.0rem;
+    padding: 1rem 2rem;
+opacity: 1;
+}
+
+
+/*--------------------
+キャラクターエリア
+---------------------*/
+#main_chara{
+	position: absolute;
+    top: 0;
+    left: 0;
+	width: 450px;
+	height: 300px;
+	padding: 0 0 0 5px;
+}
+
+#Level_BOX{
+	background-color:#696969;
+	color: ghostwhite;
+	width: 150px;
+	height: 35px;
+	border: double ghostwhite;
+	justify-content: space-around;
+}
+
+#Level_num{
+	font-weight: bolder;
+}
+
+#Total_BOX{
+	background-color:#696969;
+	color: ghostwhite;
+	width: 150px;
+	height: 35px;
+	border: double ghostwhite;
+	justify-content: space-around;
+}
+
+#Total_num{
+	font-weight: bolder;
+}
+
+#JOB_BOX{
+	background-color: #696969;
+	flex-direction: column;
+	width: 150px;
+	height: 230px;
+	border: double ghostwhite;
+}
+
+#JOB{
+	width: 150px;
+	height: 200px;
+}
+
+#JOB_name{
+	font-size: 18px;
+	width: 150px;
+	height: 30px;
+	color: ghostwhite;
+	font-weight: bolder;
+}
+
+#TUMI_PET_BOX{
+	background-color: #696969;
+	border: ridge ghostwhite;
+}
+
+.tumi_area{
+	height: 42px;
+	color: ghostwhite;
+	font-weight: bolder;
+}
+
+.SU_BTN{
+	border: ridge ghostwhite;
+	color: black;
+}
+
+#Done{
+	background-color:lightgoldenrodyellow;
+}
+
+#NOTdo{
+	background-color: lightsteelblue;
+}
+
+.BTN_only{
+	display: flex;
+	justify-content: space-around;
+	padding: 0 0 13px;
+}
+
+/*--------------------
+ペットエリア
+---------------------*/
+#PET_GROUP1{
+	background-color: #696969;
+}
+
+#PET_GROUP2{
+	background-color: #696969;
+}
+
+#PET_GROUP3{
+	background-color: #696969;
+}
+
+.PET_BOX{
+	width: 60px;
+	height: 70px;
+	border: solid 2px ghostwhite;
+	font-size: 42px;
+	color: ghostwhite;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/*--------------------
+ジャンケンエリア
+---------------------*/
+.jyanken_part{
+	position: relative;
+	position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9000;
+  width: 100%;
+  height: 100%;
+  background:black;
+  opacity: 0.8;
+}
+
+.jyanken_event{
+	background-color:white;
+	width: 60%;
+	height: 40%;
+	padding: 20px;
+    z-index: 9999;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform:translate3d(-50%,-50%,0) ;
+}
+
+.jyanken_text{
+	display: flex;
+	justify-content: center;
+	font-size: 32px;
+	font-weight: bolder;
+}
+
+.ABC_BOX{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	justify-content: space-around;
+}
+
+#jyanken_result_part{
+	background-color:lightgoldenrodyellow;
+	padding: 20px;
+    z-index: 9999;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform:translate3d(-50%,-50%,0) ;
+}
+
+#result_PET_text{
+	font-size: 20px;
+	font-weight: bolder;
+	text-align: center;
+	padding: 10px 0;
+}
+
+/*--------------------
+スゴロクのドット絵関連
+---------------------*/
+#SUGO_area{
+	position: relative;
+	background-color:deepskyblue;
+}
+
+.Div_BOX{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.S_BOX{
+	background-color: deepskyblue;
+	width: 30px;
+	height: 30px;
+}
+
+.C_GREEN{
+	background-color: lightgreen;
+	border: solid 1px black;
+	text-align: center;
+}
+
+
+
+/*どの部分のcssに対して
+命令をしているのかコメントを
+記載しよう！
+---------------------*/
+
+/*--------------------
+
+---------------------*/
+
+
+
+
+/*
+---------------------*/
