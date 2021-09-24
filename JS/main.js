@@ -9,6 +9,150 @@ $("#FDI_p").on("click", function () {
     $("#FDI_p").hide();
 });
 
+// 懺悔エリア
+$("#Apolo_area").hide();
+
+$("#NOTdo").on("click", function () {
+    $('#Apolo_area').fadeIn(1000);
+});
+
+$("#apology").on("click", function () {
+    const apolo_text = $("#apology_area").val();
+    localStorage.setItem("apolo_memo", apolo_text)
+    $("#Apolo_area").hide();
+});
+
+if (localStorage.getItem("apolo_memo")) {
+    const apolotext = localStorage.getItem('apolo_memo');
+    $('#apology_area').val(apolotext);
+}
+
+// データグラフ関係
+let users = []
+
+$("#Done").on('click', function () {
+    const DoneCodeHours = $("#NUM_BTN").val();
+    const number = Number(DoneCodeHours);
+    let today = new Date();
+    let month = today.getMonth() + 1;
+    let day = today.getDate();
+    let Date_date = month + '月' + day + '日';
+    users.push({ Date: Date_date, Hours: number },)
+    const users_json = JSON.stringify(users);
+    localStorage.setItem("data_memo", users_json);
+    console.log(users);
+    // alert("OK");
+});
+
+$("#NOTdo").on('click', function () {
+    let today = new Date();
+    let month = today.getMonth() + 1;
+    let day = today.getDate();
+    let Date_date = month + '月' + day + '日';
+    users.push({ Date: Date_date, Hours: 0 },)
+    const users_json = JSON.stringify(users);
+    localStorage.setItem("data_memo", users_json);
+    console.log(users);
+    // alert("OK");
+});
+
+
+if (localStorage.getItem("data_memo")) {
+    const send_data = localStorage.getItem("data_memo");
+    const relode_Data = JSON.parse(send_data);
+    users = users.concat(relode_Data);
+    console.log(users);
+}
+
+if (!localStorage.getItem("data_memo")) {
+    users.push({ Date: 'start', Hours: 0 })
+    const users_json = JSON.stringify(users);
+    localStorage.setItem("data_memo", users_json);
+}
+
+
+const Data = localStorage.getItem("data_memo");
+const data_get = JSON.parse(Data);
+const DATE_data = data_get.map(a => a.Date);
+const title_get = data_get.map(b => b.Hours);
+
+// 配列のtitle部分を数値化して累計として配列表示させる
+const array = [];
+let total = 0;
+for (let i = 0; i < title_get.length; i++) {
+    total += title_get[i];
+    array.push(total);
+}
+console.log(array);
+
+
+// グラフ化
+const ctx = document.getElementById('mychart');
+const myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: DATE_data,
+        datasets: [{
+            label: '累計時間',
+            data: array,
+            borderColor: '#f88',
+            yAxisID: "y-axis-2",
+        },
+        {
+            label: '1日の実施時間',
+            type: 'bar',
+            data: title_get,
+            borderColor: '#66CCFF',
+            backgroundColor: '#66CCFF',
+            yAxisID: "y-axis-1",
+        },
+        ],
+    },
+    options: {
+        responsive: true,
+        scales: {
+            yAxes: [{
+                id: "y-axis-1",   // Y軸のID
+                type: "linear",   // linear固定 
+                position: "left", // どちら側に表示される軸か？
+                ticks: {          // スケール
+                    max: 24,
+                    min: 0,
+                    stepSize: 4
+                },
+            }, {
+                id: "y-axis-2",
+                type: "linear",
+                position: "right",
+                ticks: {
+                    max: 150,
+                    min: 0,
+                    stepSize: 10
+                },
+            }],
+        }
+    },
+});
+
+// グラフエリアのスライドダウンの仕様
+$(function () {
+
+    // 画面読込時に実行する。
+    $("#DATA_Page").hide(); // 初期表示で隠しておく
+
+    // 指定ボタンを押下すると処理を開始する
+    $("#Data_menu").on("click", function () {
+        $("#DATA_Page").slideDown(500);
+    });
+
+    // 指定ボタンを押下すると処理を開始する
+    $("#btn2").on("click", function () {
+        $("#DATA_Page").slideUp(500); // hideは隠す、slidUpは上に上がって消える
+    });
+
+});
+
+
 
 // レベルアップのボタン
 // 出来たボタンを押した回数をカウント
@@ -253,7 +397,8 @@ $('#Total_num').text(localStorage.getItem('Total_memo'));
 
 // 計算エリア
 $("#Done").on('click', function input(NUM) {
-    let plusNum = prompt("コードを書いた時間を入力");
+    // 値を取得するときはvalを使う
+    let plusNum = $('#NUM_BTN').val();
     let AAA = parseInt(plusNum);
     // sum += parseInt(plusNum);
     start = parseInt(localStorage.getItem('Total_memo'));
@@ -265,6 +410,19 @@ $("#Done").on('click', function input(NUM) {
 })
 
 
+//セレクトエリアの数値の設定 
+function selectBoxCreate(start, end) {
+    // 空の変数を設定
+    let str = "";
+
+    for (let i = start; i < end; i++) {
+        str += `<option>${i}</option>`;
+    }
+    return str;
+}
+
+const code_hours = selectBoxCreate(1, 25);
+$("#NUM_BTN").html(code_hours);
 
 
 

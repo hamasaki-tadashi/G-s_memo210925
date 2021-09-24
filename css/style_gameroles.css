@@ -1,0 +1,133 @@
+html{
+	font-size: 62.5%;
+}
+/*全体　共通
+最初から設定してあるので特に変更
+しなくても大丈夫です♪
+-----------------*/
+body{
+	font-family: Roboto, "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+	line-height: 1.75;
+	font-size: 16px;
+	color:ghostwhite;
+	background-color: gray;
+}
+
+img {
+max-width: 80%;
+width:auto;
+height: auto;
+object-fit: fill;
+}
+
+
+
+/*　パディングをサイズ内側にする処理　*/
+* {
+	padding:0;
+	margin:0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/*ーーーーーーーーーーー*/
+/*この下から記述*/
+/*ーーーーーーーーーーー*/
+
+
+
+/*どの部分のcssに対して
+命令をしているのかコメントを
+記載しよう！
+---------------------*/
+
+/*--------------------
+body + 共通で使えるもの
+---------------------*/
+main{
+	max-width: 1000px;
+	width: 100%;
+} 
+
+.text-center{
+	text-align: center;
+}
+
+.flexbox_auto{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+/*--------------------
+menu Part
+---------------------*/
+#Main_title{
+    width: 500px;
+    margin: 0 0 0 10px;
+	color:black;
+}
+
+.MENU_BOX{
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* justify-content: space-between; */
+    background-color:gold;
+    /* padding: 5px 0; */
+}
+
+.NAV_text{
+    width: 100%;
+}
+
+.nav-menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 0 0 100px;
+    font-size: 20px;
+}
+
+
+
+
+/* --------------------
+text関連
+-----------------------*/
+.text_part{
+	margin: 30px 0 0 30px;
+}
+
+h1{
+ margin: 0 0 0 30px;
+}
+
+h2{
+	margin: 10px 0 0 30px;
+	font-size: 28px;
+}
+
+h3{
+	margin: 10px 0 0 30px;
+	font-size: 24px;
+}
+
+p{
+	margin: 3px 0 0 30px;
+	font-size: 20px;
+	color:ghostwhite;
+}
+
+.img_part{
+	margin: 5px 0;
+}
+
+/*
+---------------------*/

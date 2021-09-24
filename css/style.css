@@ -40,6 +40,60 @@ object-fit: fill;
 /*ーーーーーーーーーーー*/
 /*この下から記述*/
 /*ーーーーーーーーーーー*/
+/*--------------------
+menu Part
+---------------------*/
+#Main_title{
+	width: 500px;
+	margin: 0 0 0 10px;
+}
+
+.MENU_BOX{
+	height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* justify-content: space-between; */
+    background-color:gold;
+    /* padding: 5px 0; */
+}
+
+.NAV_text{
+    width: 100%;
+}
+
+.nav-menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 0 0 100px;
+    font-size: 20px;
+}
+
+/*ーーーーーーーーーーー*/
+/*グラフエリア*/
+/*ーーーーーーーーーーー*/
+#DATA_Page{
+	padding: 10px;
+}
+
+.disp-area{
+    position: relative;
+}
+
+#btn2{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 14px;
+    color:black;
+	background-color: lightgoldenrodyellow;
+    border: solid black 1px;
+    padding: 1px;
+}
+
+
 
 /*ーーーーーーーーーーー*/
 /*ゲームクリア*/
@@ -100,6 +154,63 @@ object-fit: fill;
 opacity: 1;
 }
 
+/*ーーーーーーーーーーー*/
+/*懺悔エリア*/
+/*ーーーーーーーーーーー*/
+#oni_zange{
+    position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9000;
+  width: 100%;
+  height: 100%;
+  background:black;
+  opacity: 0.9;
+  display: flex;
+    justify-content: center;
+}
+
+#zange_textarea{
+    /* background-color: gold; */
+	width: 600px;
+	height: 300px;
+    z-index: 99999;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform:translate3d(-50%,0%,0) ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	flex-direction: column;
+    font-size: 2.0rem;
+    padding: 1rem 2rem;
+opacity: 1;
+}
+
+#Apolo_title{
+	font-size: 32px;
+	font-weight: bolder;
+	color: crimson;
+	text-shadow:  2px  2px 15px #ffffff ,
+               -2px  2px 15px #ffffff ,
+                2px -2px 15px #ffffff ,
+               -2px -2px 15px #ffffff ;
+}
+
+
+#apology_area{
+	background-color: black;
+	border: solid crimson 5px;
+	color: gold;
+}
+
+#apology{
+	padding: 4px;
+	background-color:gold;
+	border: solid black 3px;
+	margin: 15px 0;
+}
 
 /*--------------------
 キャラクターエリア
@@ -176,12 +287,14 @@ opacity: 1;
 	color: black;
 }
 
-#Done{
-	background-color:lightgoldenrodyellow;
-}
-
 #NOTdo{
 	background-color: lightsteelblue;
+}
+
+#DONE_BTN{
+	display: flex;
+	align-items: center;
+	background-color: lavenderblush;
 }
 
 .BTN_only{

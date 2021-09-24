@@ -19,17 +19,51 @@
     <link rel="stylesheet" type="text/css" href="css/sanitize.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
     <!-- あらかじめcssを読み込んでいるので設定しなくてOK-->
 </head>
 
 <body>
     <!-- ヘッダー -->
+    <section>
+        <nav class="MENU_BOX">
+            <h1 id="Main_title">コードチャレンジ2.0</h1>
+
+            <div class="NAV_text">
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#">Main</a></li>
+                    <li id="Data_menu" class="nav-item"><a href="#">Data</a></li>
+                    <li class="nav-item"><a href="index_gameroles.html" target="_blank"
+                            rel="noopener noreferrer">GameRules</a></li>
+                </ul>
+            </div>
+        </nav>
+    </section>
+
+    <!-- データ -->
+    <section id="DATA_Page">
+        <div class="disp-area">
+            <button type="button" id="btn2">close</button>
+            <canvas id="mychart"></canvas>
+        </div>
+    </section>
+
     <!-- 画面いっぱいのフェードイン -->
     <section class="TOP_ANI">
         <div id="fadein_test"></div>
         <p id="FDI_p">コードチャレンジする</p>
     </section>
 
+    <!-- 懺悔エリア -->
+    <div id="Apolo_area">
+        <div id="oni_zange"><img src="img/鬼.png" alt="鬼の画像"></div>
+        <div id="zange_textarea">
+            <p id="Apolo_title">できなかった理由を述べよ<br>
+                過去の懺悔を読み、反省せい！</p>
+            <textarea id="apology_area" cols="70" rows="20"></textarea>
+            <button id="apology">懺悔する</button>
+        </div>
+    </div>
 
     <!--150超えた時に表示されるクリア画面-->
     <div id="clear_BOX">
@@ -265,7 +299,10 @@
                 <div class="SUGO_btn">
                     <p class="flexbox_auto tumi_area">今日の積み上げ</p>
                     <div class="BTN_only tumi_area">
-                        <button id="Done" class="SU_BTN">出来た！！</button>
+                        <div id="DONE_BTN" class="SU_BTN">
+                            <select id="NUM_BTN"></select>
+                            <button id="Done">時間出来た！！</button>
+                        </div>
                         <button id="NOTdo" class="SU_BTN">出来なかった</button>
                     </div>
                 </div>
